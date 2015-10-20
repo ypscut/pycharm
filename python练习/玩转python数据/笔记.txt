@@ -1,0 +1,120 @@
+
+语句 完整执行一个任务的一行逻辑代码
+
+常用数据类型：
+    字符串： 单引号 双引号
+    映射类型  字典
+
+算数运算：
+比较运算： 3<4<7  same as (3<4)and(4<7)
+逻辑运算符： not and or
+字符运算符： 原始字符串r
+综合运算
+
+函数：
+
+
+
+
+
+#####
+if 语句：
+    if elif
+
+
+range  xrange--生成器  节省内存
+
+while 循环
+for 循环   for iter_var in iterable_object:
+    iterable_object : String List TUple Dictionary
+                      File
+
+ 生成器：
+ (i+1 for i in range(10) if i%2)
+
+break:
+    sumA=0
+    i=1
+    while True:
+        sumA+=i
+        i+=1
+        if(sumA>10):
+            break
+循环中的 else： 正常循环结束 则执行 若是被break掉 则不会执行
+
+########
+
+函数：
+    默认参数： 默认参数不能放在非默认参数之前
+    关键字参数： f(x,y) -> f(y=false,x=68)
+                          f(y=false,68) 这样会出错
+    传递参数： def self(f,y):
+    lambda函数 ： 匿名函数->   lambda  x,y: x+y   简洁性
+    eg:
+    from math import  sqrt
+    def isprime(x):
+        if x==1:
+            return  False
+        k=sqrt(x)
+        for j in range(2,int(k+1)):
+            if x%j==0:
+                return False
+        return True
+    for i in range(2,101):
+        if isprime(i):
+            print i
+
+循环和递归：
+    # the nth Fibonacci number
+    def fib(n):
+        if n==0 or n==1:          #停止条件，出口
+            return n
+        else:
+            return(fib(n-1)+fib(n-2))
+
+
+    #Hanoi
+    def hanoi(a,b,c，n):
+        if n==1:
+            print a,'->',c
+        else:
+            hanoi(a,c,b,n-1)
+            print a,'->',c
+            hanoi(b,a,c,n-1)
+
+#变量作用域名字时
+    全局变量和局部变量
+    global 语句：强调全局变量
+        def f(x):
+            gloabal a
+            print a
+            a=5
+            print a+5
+
+    输出一个数的所有素数因子：
+    from math import  sqrt
+    def isprime(x):
+        if x==1:
+            return False
+        k=int(sqrt(x))
+        for j in range(2,k+1):
+            if x%j==0:
+                return False
+        return True
+
+    if __name__=="__main__":
+        flag='y'
+        while(flag=='y'):
+            num=input('Pease input a number:')
+            for i in range(2,num):
+                if isprime(i) and num%i==0:
+                    print i,
+            flag=raw_input("\nIf you want to input another number,please input y,else input n.")
+
+
+
+
+
+
+
+

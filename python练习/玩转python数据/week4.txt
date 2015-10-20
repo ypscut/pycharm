@@ -1,0 +1,145 @@
+
+## Python 数据统计和可视化
+
+Python基本数据统计：
+    Python获取数据：
+        from matplotlib.finance import quotes_historical_yahoo
+        from datetime import  date
+        import pandas as pd
+        today=date.today()
+        start=(today.year-1,today.month,today.day)
+        quotes=quotes_historical_yahoo('AXP',start,today)
+        df=pd.DataFrame(quotes)
+        print df
+    nltk 语料库
+    （默认都是对数据框的操作）
+    数据整理： 加属性名  pd.DataFrame(quotes,index=range(1,len(..)),colomn=..)
+           时间序列：
+                    from datetime import date
+                    import numpy as np
+                    print date.fromordinal(735190)
+
+                    import pandas as pd
+                    dates=pd.date_range('20151001',periods=7)
+                    print dates
+                    dates=pd.DataFrame(np.random.randn(7,3),index=dates,columns=list('ABC'))
+                    print dates
+
+    数据显示：
+        - 显示索引 index
+        - 显示列名 columns
+        - 显示数据的值 values
+        - 显示数据的描述 describe
+
+        .head(5)     .tail(5)
+
+    数据选择：
+        选择行：切片、索引、标签lable (loc)  iloc(位置） 去某个值 iat
+        选择列： 列名、标签
+        选择区域
+        筛选: DataFrame[DataFrame.index>=..)
+             quotesdf[(quotesdf.index>u'2014-01-01')&(quotesdf.close>=95)]
+        df['columnname']  df.columnname  不支持 df['columnname1',columnname2']
+
+    简单统计与处理： .mean(columns='')
+                排序： .sort()
+                分组：.groupby
+                merge: append()
+                       Concat()  :不同逻辑结构的对象也能够连接
+                       Join:  pd.merge(djidf,AKdf,on='code')
+
+    实例： 获取微软2014年第一季度股票收盘价的平均值
+
+    from matplotlib.finance import quotes_historical_yahoo
+    from datetime import date
+    import pandas as pd
+    today = date.today()
+    start = (today.year-2, today.month, today.day)
+    quotesMS = quotes_historical_yahoo('MSFT', start, today)
+    attributes=['date','open','close','high','low','volume']
+    quotesdfMS = pd.DataFrame(quotesMS, columns= attributes)
+    list = []
+    for i in range(0, len(quotesMS)):
+        x = date.fromordinal(int(quotesMS[i][0]))
+        y = date.strftime(x, '%y/%m/%d')
+        list.append(y)
+    quotesdfMS.index = list
+    quotesdfMS = quotesdfMS.drop(['date'], axis = 1)
+    list = []
+    quotesdfMS14 = quotesdfMS['14/01/01':'14/12/31']
+    for i in range(0, len(quotesdfMS14)):
+        list.append(int(quotesdfMS14.index[i][3:5])) #get month just like '02'
+    quotesdfMS14['month'] = list
+    print quotesdfMS14.groupby('month').mean().close
+
+
+# Python高级数据处理与可视化
+    聚类分析：
+    数据可视化：
+        matplotlib:（1）画图质量高
+                   （2）方便快捷的绘图模块：
+                        - 绘图API --pyplot模块
+                        - 集成库 --pylab模块（包含NumPy 和pyplot中的常用函数）
+                    官网： http://matplotlib.org/
+            eg:
+            import numpy as np
+            import matplotlib.pyplot as plt
+            x=np.linspace(0,1)
+            y=np.sin(4*np.pi*x)*np.exp(-5*x)
+            plt.plot(x,y,'o')
+            plt.show()
+
+                    图像属性控制： help(plt.plot)
+                        色彩和样式 - plt.plot(listKOindex,listKO,'g--')
+                                  - plt.plot(listKOIndex,listKO,'rD')
+                        加标题：图、横轴和纵轴
+                             - plt.title()  .xlabel()  .ylabel()
+                    子图：- subplot()
+                         - axes()
+        pandas作图：直接对Series 和DataFrame 绘图
+                    import  pandas as pd
+                    x=np.linspace(0,1)
+                    y=np.sin(4*np.pi*x)*np.exp(-5*x)
+                    t=pd.DataFrame(y,index=x)
+                    t.plot()
+
+
+
+        数据存取：
+            - csv格式数据存取
+                from matplotlib.finance import quotes_historical_yahoo
+                from datetime import date
+                import pandas as pd
+                today=date.today()
+                start=(today.year-1,today.month,today.day)
+                quotes=quotes_historical_yahoo('IBM',start,today)
+                df=pd.DataFrame(quotes)
+                df.to_csv('stockIBM.csv')
+            -xls 格式数据存取 df.to_excel()
+
+    python 理工类应用：Biopython
+    python 人文社科类应用：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        -
+
+
+
+
+

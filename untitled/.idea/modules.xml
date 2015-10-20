@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../PCA&amp;SVD/.idea/PCA&amp;SVD.iml" filepath="$PROJECT_DIR$/../PCA&amp;SVD/.idea/PCA&amp;SVD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../adaboost/.idea/adaboost.iml" filepath="$PROJECT_DIR$/../adaboost/.idea/adaboost.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../kNN/.idea/kNN.iml" filepath="$PROJECT_DIR$/../kNN/.idea/kNN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../kaggle/.idea/kaggle.iml" filepath="$PROJECT_DIR$/../kaggle/.idea/kaggle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../python练习/.idea/python练习.iml" filepath="$PROJECT_DIR$/../python练习/.idea/python练习.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/untitled.iml" filepath="$PROJECT_DIR$/.idea/untitled.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../决策树/.idea/决策树.iml" filepath="$PROJECT_DIR$/../决策树/.idea/决策树.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../回归/.idea/回归.iml" filepath="$PROJECT_DIR$/../回归/.idea/回归.iml" />
+    </modules>
+  </component>
+</project>
+

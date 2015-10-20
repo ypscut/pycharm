@@ -1,0 +1,112 @@
+
+####面向对象
+
+ 1、GUI面向对象： - 相同点：有名字、有矩形框、鼠标点击时有效果
+                - 不同点：功能不同
+
+ 2、抽象：- 对象
+         - 类
+
+      类的定义：class ClassName(object):
+                'define CLassName class'
+                class_suite
+             eg: class Dog(object):
+                    def greet(self):
+                       print'Hi!'
+             实例：
+             - 定义类 - Dog
+             - 创建一个实例 - dog=Dog()
+             - 通过实例使用属性或方法 - dog.greet
+
+      对象的初始化方法： __init__()
+
+      类属性： - 类的数据属性（静态成员） 仅仅是所定义的类的变量
+              - 在类创建后使用
+              - 和实例无关，修改类属性需要使用类名
+
+ 3、继承：
+       子类的定义： class SubClassName(ParentClass1[,ParentClass2,...]):
+                        'optional class documentation string'
+                        class_suite
+       私有属性和方法：- 默认类的成员属性和方法都是'public'
+                     - 提供'访问控制符' 来限定成员函数的访问
+                    private<--    (1) 双下划线（__) :  __var 属性会被__classname_var替换，防止父类和子类中的同名冲突
+                    protect<--    (2) 单下划线（_) : 在属性名前使用一个单下划线字符，防止模块的属性用"from mymodule import *" 来加载
+
+
+图形用户界面：
+ 1、GUI的基本框架
+    eg:
+    ## Filename: firstwxPython.py
+    import wx
+    app=wx.App()
+    frame=wx.Frame(None,title="Hello,World")
+    frame.Show(True)
+    app.MainLoop()
+
+    # 上例修改后
+    #Filename: mouse.py
+    import  wx
+
+    class Myapp(wx.App):
+        def OnInit(self):
+            frame=wx.Frame(None,title="Hello,World")
+            frame.show()
+            return True
+    if __name__=='__main__':
+        app=Myapp()
+        app.MainLoop()
+
+ 事件处理机制： - 移动鼠标、按下按钮等
+              - 可以由用户操作触发产生，也可以在程序中创建对象产生
+              - wxPython 程序将特定类型的事件关联到特定的一块代码（方法），
+             当该类型的事件产生时，相关代码将响应事件被自动执行。
+
+
+ GUI常用组件：
+    按钮：接受用户点击事件，触发相应的操作
+        常用按钮 - wx.Button:文本按钮
+                - wx.BitmapButton: 位图按钮
+                - wx.ToggleButton: 开关按钮
+    菜单： 菜单栏、 菜单 、菜单项命令
+        wxPython 用于创建菜单的类：- wx>menuBar
+                                 - wx.Menu
+                                 - wx.MenuItem
+    静态文本和文本框
+    列表
+    单选
+
+ 布局管理：
+    灵活布局的解决方案 -sizer : 本身不是一个容器或一个窗口部件，只是一个屏幕布局的算法
+                            wxPython常用的sizer
+                                - wx.BoxSizer
+                                - wx.FlexGridSizer
+                                - wx.GridSizer
+                                - wx.GridBagSizer
+                                - wx.StaticBoxSizer
+                      使用sizer 的步骤 ：（1） 创建自动调用尺寸的容器，例如panel
+                                        （2） 创建sizer
+                                        (3) 创建子窗口（窗体部件）
+                                        （4）使用sizer的Add（）方法将每个子窗口添加给sizer
+                                        （5） 调用容器的SetSizer（sizer）方法
+
+
+其他的GUI库： http://wxpython.org
+    PyQt
+    Tkinter
+    PyGTK
+
+
+综合应用：
+
+
+
+
+
+
+
+
+
+
+
+

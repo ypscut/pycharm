@@ -1,0 +1,52 @@
+
+#用python 获取数据
+    文件的打开、读写和关闭：
+        打开： file_obj=open(filename,mode='r',bufferring=-1)
+            mode中 w和w+ 都需要清空原文件的内容，a和a+都只能追加，也就是在
+            文件尾部添加内容，要在一个文件中间部分添加一行字符串的话要用r+
+
+            open（） 返回的一个文件对象，可迭代，有关闭方法和许多读写相关的方法、函数
+        读写： f.read() f.readlines()
+        其他的一些文件相关函数： file_obj.seek(offset,whence=0)
+                            在文件中移动文件指针，从whence便宜offset个字节
+                            whence参数可选，默认为0
+    标准文件：stdin 标准输入   stdout 标准输出  stderr 标准错误
+
+
+    获取网络数据：
+        urllib  urllib2 httplib
+
+
+
+    序列：字符串'' 、列表[]、元组()
+        week[::-1] 逆序输出
+        序列类型转换工厂函数： list() str() unicode() basetring()
+                            tuple()
+        序列类型可用内建函数： len() sorted()
+                            list.sort(func=None,key=None,reverse=False)
+
+        字符串：
+            应用： 判断一回文串字符   reversed()
+            转义字符
+        列表：
+            可扩展性，
+            列表解析： [ expression for expr in sequence1
+                                   for expr2 in sequence2...
+                                   if condition ]
+                      [(x+1,y+1) for x in range(2) for y in ranfe(2)]
+        元组：
+            （1）在映射类型中当作键使用 （2）函数的特殊类型函数
+            （3）作为很多内建函数的返回值
+            元组作为函数的形式参数： def func(arfs1,*argst):
+            作为函数的常见返回类型： def fun():
+                                     return 1,2,4
+                                   enumarate()
+            ord() 返回一个字符的整数(asici)
+
+
+
+
+
+
+
+

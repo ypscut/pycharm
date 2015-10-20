@@ -1,0 +1,58 @@
+
+###数据结构
+
+字典：{}
+    创建：（1）直接创建  （2） dict函数
+        将所有员工的默认工资设为30000：{}.fromkeys(('yanglu','yangpeng','yangwen'),30000)
+    排序：sorted()
+    基本操作：键值查找，更新、添加、成员判断
+    字典的格式化字符串： %(key)格式化说明符% 字典对象名
+                      "Niuyun's salary is %(Niuyun)s."%aInfo
+    字典的内建函数： aInfo.keys()  \ aInfo.values()  .get()
+                    has_key()函数判断一个函数是否在字典中
+                   update() 函数更新字典：aInfo.updata(bInfo)
+                   clear():清空字典
+                   dict2=dict1 将dict1和dict2关联到同一字典，执行字典操作，dict1和dict2都会同时变
+    字典作为函数的形参：
+        Python中函数的参数形式:（1）位置或关键字参数
+                             （2）仅位置参数
+                             （3）可变长位置参数
+                             （4）可变长关键字参数
+              def func(args1,*argst,**argsd):
+                          print args1 ->位置参数
+                          print args2 ->可变长位置参数
+                          print argsd ->可变长关键字参数，用字典
+
+  集合：set() ,可变集合(set) 、不可变集合(frozenset)
+       集合比较： in \not in \ ==\ !=\ < （子集）\<= (真子集）
+       集合关系运算：& | - ^
+       集合内建函数： 面向所有集合： .issubset()
+                    面向可变集合： update() add() pop() clear() remove()
+
+
+
+
+Python扩展库：
+    Scipy中的数据结构： ndarray(N维数组）
+                      Series（变长字典）
+                      DataFrame(数据框）
+    NumPy:
+    Matplotlib:
+    pandas
+
+    array模块：
+    ndarray: 创建和输出   arange()   reshape()
+             .sum(axis=0) .sum(axis=1)
+             where(cArray>2,dArray,eArray)
+             内建函数：
+             ufunc函数（universal function)：是一种对数组的每个元素进行操作的函数
+
+    变长字典Series: 自带索引 、 自定索引
+                   Series name属性  .name   .index.name
+
+    数据框：DataFrame
+          基本特征：
+            - 一个表格型的数据结构
+            - 含有一组有序的列（类似于index)
+            - 大致可看成共享同一个index 的Series集合
+    Scipy官网：http://scipy.org/
